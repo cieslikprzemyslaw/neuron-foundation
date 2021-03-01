@@ -23,7 +23,6 @@ body {
   touch-action: manipulation;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   overflow-x: hidden;   
-  visibility: hidden;
 }
 h2 { 
   font-weight: 600;
