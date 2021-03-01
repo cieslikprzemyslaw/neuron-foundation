@@ -28,6 +28,13 @@ const TextWrapper = styled.section`
         transform: translate(-0%, -50%);
         max-width: 40%;
     }
+
+    @media(min-width: 1440px){
+        top: 60%;
+        left: 10%;
+        transform: translate(-0%, -50%);
+        max-width: 30%;
+    }
 `;
 
 const Title = styled.h3`
