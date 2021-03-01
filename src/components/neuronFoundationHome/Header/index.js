@@ -1,24 +1,26 @@
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
-import { Header as Head, TextWrapper, Title, Text } from './styles';
+import { Header as Head, TextWrapper, Title, Text, Overlapping } from './styles';
 
 const Header = () => {
     const intl = useIntl();
 
     return (
         <Head>
-            <TextWrapper>
-                <Title>
-                    {intl.formatMessage({
-                        id: `header.goals`,
-                    })}
-                </Title>
-                <Text>
-                    {intl.formatMessage({
-                        id: `header.text`,
-                    })}
-                </Text>
-            </TextWrapper>
+            <Overlapping>
+                <TextWrapper>
+                    <Title>
+                        {intl.formatMessage({
+                            id: `header.goals`,
+                        })}
+                    </Title>
+                    <Text>
+                        {intl.formatMessage({
+                            id: `header.text`,
+                        })}
+                    </Text>
+                </TextWrapper>
+            </Overlapping>
         </Head>
     );
 };

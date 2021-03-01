@@ -3,7 +3,6 @@ import Nav from '../components/staticComponents/Nav';
 import MobileNav from '../components/staticComponents/MobileNav';
 import Header from '../components/neuronFoundationHome/Header';
 // import Footer from '../components/staticComponents/Footer';
-
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -13,7 +12,7 @@ const Wrapper = styled.div`
 // markup
 const IndexPage = () => {
     return (
-        <Wrapper >
+        <Wrapper>
             <Nav />
             <MobileNav />
             <Header />
