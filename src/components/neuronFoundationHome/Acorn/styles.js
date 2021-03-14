@@ -13,7 +13,7 @@ const Wrapper = styled.section`
 `;
 
 const Overlay = styled.section`
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
     height: 100vh;
     padding: 65px 5vw;
 `;
@@ -26,9 +26,9 @@ const TextSection = styled.section`
 `;
 
 const TitleLogo1 = styled.img.attrs({
-    src: `${smartOak}`
+    src: `${smartOak}`,
 })`
-    @media(min-width: 800px){
+    @media (min-width: 800px) {
         display: none;
     }
 `;
@@ -45,6 +45,7 @@ const TitleLogo2 = styled.img.attrs({
 
 const Text = styled.p`
     color: #fff;
+    margin-top: 50px;
     text-align: right;
     max-width: 40%;
 `;
