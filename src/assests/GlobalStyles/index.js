@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import './index.css';
+import {h1, h2, h3, p } from '../../components/common/globalStyles';
 
 export default createGlobalStyle`
 * {
@@ -24,8 +25,18 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   overflow-x: hidden;   
 }
+h1{
+  ${h1}
+}
 h2 { 
+  ${h2}
   font-weight: 600;
+}
+h3{
+  ${h3}
+}
+p{
+  ${p}
 }
 img {
     max-width: 100%;
