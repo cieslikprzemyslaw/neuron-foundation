@@ -1,8 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import Nav from '../components/staticComponents/Nav';
 import MobileNav from '../components/staticComponents/MobileNav';
-import Header from '../components/neuronFoundationHome/Header';
-import News from '../components/neuronFoundationHome/News';
+import Article from '../components/neuronFoundationArticle/';
 // import Footer from '../components/staticComponents/Footer';
 import styled from 'styled-components';
 
@@ -10,14 +9,13 @@ const Wrapper = styled.div`
     overflow-x: hidden;
     margin: 0;
 `;
-// markup
-const IndexPage = ({ data }) => {
+
+const news = ({ data }) => {
     return (
         <Wrapper>
             <Nav />
             <MobileNav />
-            <Header />
-            <News dataImage={data} />
+            <Article dataImage={data} />
             {/* <Footer /> */}
         </Wrapper>
     );
@@ -35,4 +33,4 @@ export const query = graphql`
     }
 `;
 
-export default IndexPage;
+export default news;
