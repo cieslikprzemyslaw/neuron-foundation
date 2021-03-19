@@ -5,7 +5,11 @@
         "contact": "Kontakt",
         "aboutUs": "O nas",
         "otherSites": "Inne Strony",
-        "searchIn": "Szukaj W"
+        "searchIn": "Szukaj W",
+        "mainPage": "STRONA GŁOWNA",
+        "news": "AKTUALNOŚCI",
+        "join": "DOŁĄCZ",
+        "gallery": "GALERIA"
     },
     "header": {
         "goals": "Cele fundacji",
