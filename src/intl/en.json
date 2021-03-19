@@ -5,7 +5,11 @@
         "contact": "Contact",
         "aboutUs": "About us",
         "otherSites": "Other Websites",
-        "searchIn": "Search In"
+        "searchIn": "Search In",
+        "mainPage": "HOME PAGE",
+        "news": "NEWS",
+        "join": "JOIN",
+        "gallery": "GALLERY"
     },
     "header": {
         "goals": "Cele fundacji",
