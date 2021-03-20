@@ -28,7 +28,7 @@ const ExternalLink = styled.a`
     width: 45%;
     margin: 20px 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     text-decoration: none;
     transition: all 0.15s ease;
@@ -40,6 +40,7 @@ const ExternalLink = styled.a`
 `;
 
 const ExternalText = styled.p`
+    padding-left: 50px;
     text-decoration: none;
     color: #0E0E0E;
 `;
