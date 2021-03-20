@@ -30,9 +30,9 @@ const MobileNav = () => {
     const [langMenu, setLangMenu] = useState(false);
 
     const whiteMenu = [
-        ['navigation.news', () => null, '/contact/'],
-        ['navigation.join', () => null, '/contact/'],
-        ['navigation.gallery', () => null, '/contact/'],
+        ["news", () => null, '/contact/'],
+        ["join", () => null, '/contact/'],
+        ["gallery", () => null, '/contact/'],
     ];
 
     if (documentGlobal) {
@@ -72,9 +72,7 @@ const MobileNav = () => {
                                     to={item[2]}
                                     style={{ color: '#000' }}
                                 >
-                                    {intl.formatMessage({
-                                        id: `${item[0]}`,
-                                    })}
+                                   {formatMessage(item[0])}
                                 </StyledLink>
                             </MobileNavItem>
                         );
