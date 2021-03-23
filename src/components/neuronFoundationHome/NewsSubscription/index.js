@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from '../../staticComponents/Button';
 import { Newsletter, NewsletterSubSection, NewsletterText, NewsletterInput } from './styles';
 import { useIntl } from 'gatsby-plugin-intl';
+import emailValidator from '../../common/emailValidator';
 
 const index = () => {
     const intl = useIntl();
@@ -19,14 +20,11 @@ const index = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const regex = /(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@[*[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+]*/;
-        if (regex.test(inputValue)) {
-            return console.error('dziala');
-        }
-        if (!regex.test(inputValue)) {
-            return console.error('nie działa');
-        }
-    };
+        const isEmailValid = emailValidator(inputValue);
+
+        if(isEmailValid) return console.log("dziala");
+        else return console.error("nie dziala");
+    }
 
     return (
         <Newsletter>
