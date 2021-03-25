@@ -18,7 +18,7 @@ html {
 body {
    font-family: Open Sans;
   font-size: 1.6rem ;
-  background-color: #F9F7F6;
+  background-color: white;
   font-weight: 300 ;
   touch-action: manipulation;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
