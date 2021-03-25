@@ -11,6 +11,7 @@ import Support from '../components/neuronFoundationHome/Support';
 import Patronite from '../components/staticComponents/Patronite';
 import Footer from '../components/staticComponents/Footer';
 import styled from 'styled-components';
+import FoundationMenu from '../components/staticComponents/FoundationMenu';
 
 const Wrapper = styled.section``;
 // markup
@@ -18,6 +19,7 @@ const IndexPage = ({ data }) => {
     return (
         <Wrapper>
             <Nav />
+            <FoundationMenu/>
             <MobileNav />
             <Header />
             <News dataImage={data} />

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby-plugin-intl';
 
 import styled, { keyframes } from 'styled-components';
+import Search from '../../../assests/images/search.png';
 
 const appear = keyframes`
  0% {
@@ -30,11 +31,13 @@ const MobileNavMenu = styled.div`
     z-index: 999999999999999;
     align-items: center;
     justify-content: space-between;
-    background: black;
+    background: #fff;
     width: 100%;
     display: none;
     padding: 0 1rem;
     height: 5rem;
+    border-bottom: 0.5px rgba(0, 0, 0, 0.3) solid;
+    backdrop-filter: blur(27.1828px);
 
     @media screen and (max-width: 900px) {
         display: flex;
@@ -96,6 +99,13 @@ const MobileNavItemLast = styled.li`
     opacity: 0;
     animation: 0.5s ${appear} forwards;
     animation-delay: 0.2s;
+
+    & > div > div {
+        width: 90vw;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
 `;
 
 const StyledLink = styled((props) => <Link {...props} />)`
@@ -141,12 +151,45 @@ const MobileBtn = styled.div`
     outline: none;
     transition: all 1s ease;
     svg {
-        fill: #fff;
+        fill: #575757;
         height: 26px;
         width: 26px;
         animation: ${fadeInFromNone} 0.7s linear;
     }
 `;
+
+const Input = styled.input`
+    width: 90%;
+    display: block;
+    margin: 30px auto;
+    height: 50px;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    background-color: #F5F5F5;
+    bacground: url(${Search}) left no repeat;
+    padding: 16px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    @media (min-width: 1024px) {
+        width: 45%;
+    }
+`;
+
+const WhiteMenu = styled.div`
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    &>li:last-child>a{
+        border-bottom: 0px solid black;
+    }
+`;
+
+
 
 export {
     MobileNavMenu,
@@ -158,4 +201,6 @@ export {
     ListWrapper,
     MobileBtn,
     MobileNavItemLast,
+    Input,
+    WhiteMenu,
 };

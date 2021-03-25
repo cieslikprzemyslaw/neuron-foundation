@@ -7,7 +7,7 @@ import MobileList from './MobileList';
 import MobileNavBtn from './MobileNavBtn';
 import SocialMedia from '../../common/SocialMedia';
 import { allProjectsList } from '../../common/commonData';
-import logoSrc from '../../../assests/images/smart-oak-platform-logo.svg';
+import logoSrc from '../../../assests/images/Neuron Foundation.png';
 import {
     MobileNavMenu,
     MobileNavItem,
@@ -15,6 +15,8 @@ import {
     DropDownButton,
     DropDownLink,
     MobileNavItemLast,
+    Input,
+    WhiteMenu,
 } from './styles';
 
 const documentGlobal = typeof document !== 'undefined';
@@ -27,6 +29,12 @@ const MobileNav = () => {
     const [otherWebsitesMenu, setOtherWebsitesMenu] = useState(false);
     const [langMenu, setLangMenu] = useState(false);
 
+    const whiteMenu = [
+        ["news", () => null, '/contact/'],
+        ["join", () => null, '/contact/'],
+        ["gallery", () => null, '/contact/'],
+    ];
+
     if (documentGlobal) {
         if (homeMenu || projectsMenu) {
             document.body.style.overflow = 'hidden';
@@ -34,6 +42,11 @@ const MobileNav = () => {
             document.body.style.overflow = ' hidden visible';
         }
     }
+
+     const formatMessage = ( point ) =>
+         intl.formatMessage({
+             id: `navigation.${point}`,
+         });
 
     return (
         <>
@@ -49,24 +62,33 @@ const MobileNav = () => {
                 />
             </MobileNavMenu>
             <MobileList open={homeMenu}>
-                <MobileNavItem>
-                    <StyledLink onClick={() => setHomeMenu(false)} to="/download/">
-                        {intl.formatMessage({
-                            id: `navigation.download`,
-                        })}
-                    </StyledLink>
-                </MobileNavItem>
+                <WhiteMenu>
+                    <Input/>
+                    {whiteMenu.map((item) => {
+                        return (
+                            <MobileNavItem key={item[0]}>
+                                <StyledLink
+                                    onClick={item[1]}
+                                    to={item[2]}
+                                    style={{ color: '#000' }}
+                                >
+                                   {formatMessage(item[0])}
+                                </StyledLink>
+                            </MobileNavItem>
+                        );
+                    })}
+                </WhiteMenu>
                 <MobileNavItem>
                     <StyledLink onClick={() => setHomeMenu(false)} to="/contact/">
                         {intl.formatMessage({
-                            id: `navigation.contact`,
+                            id: `navigation.aboutUs`,
                         })}
                     </StyledLink>
                 </MobileNavItem>
                 <MobileNavItem>
                     <StyledLink onClick={() => setHomeMenu(false)} to="/about-us/">
                         {intl.formatMessage({
-                            id: `navigation.aboutUs`,
+                            id: `navigation.contact`,
                         })}
                     </StyledLink>
                 </MobileNavItem>
