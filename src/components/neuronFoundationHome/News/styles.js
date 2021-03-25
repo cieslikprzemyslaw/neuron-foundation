@@ -1,8 +1,41 @@
 import styled from 'styled-components';
 import Img from 'gatsby-image';
+import { breakpoints } from '../../common/breakpoints';
 
 export const NewsStyles = styled.div`
-    margin: 0.8rem 1.6rem;
+    margin: 10vh 5vw;
+    @media (max-width: ${breakpoints.md}) {
+        margin: 10vh 5vw;
+    }
+`;
+export const FlexContainer = styled.div`
+    & > div:nth-child(even) {
+        flex-direction: row-reverse;
+        text-align: right;
+        a {
+            margin-left: auto;
+        }
+    }
+`;
+
+export const News = styled.div`
+    display: flex;
+    gap: 24px;
+    margin-bottom: 76px;
+    @media (max-width: ${breakpoints.md}) {
+        display: initial;
+    }
+`;
+
+export const LinksContainer = styled.div`
+    margin-top: -30px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @media (max-width: ${breakpoints.md}) {
+        margin-top: 0px;
+    }
 `;
 
 export const HeaderStyles = styled.div`
@@ -18,8 +51,13 @@ export const HeaderStyles = styled.div`
 `;
 
 export const Image = styled(Img)`
-    margin: 1.6rem 0;
     border-radius: 8px;
+    min-width: 272px;
+    height: 272px;
+    @media (max-width: ${breakpoints.md}) {
+        margin: 1.6rem 0;
+        height: auto;
+    }
 `;
 
 export const Header = (Link) => styled(Link)`

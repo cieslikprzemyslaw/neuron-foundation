@@ -1,21 +1,21 @@
 import React from 'react';
 import Nav from '../components/staticComponents/Nav';
 import MobileNav from '../components/staticComponents/MobileNav';
-import Article from '../components/neuronFoundationArticle/';
 import Footer from '../components/staticComponents/Footer';
 import styled from 'styled-components';
+import News from '../components/neuronFoundationHome/News';
 
 const Wrapper = styled.div`
     overflow-x: hidden;
     margin: 0;
 `;
 
-const article = ({ data }) => {
+const news = ({ data }) => {
     return (
         <Wrapper>
             <Nav />
             <MobileNav />
-            <Article dataImage={data} />
+            <News dataImage={data} />
             <Footer />
         </Wrapper>
     );
@@ -33,4 +33,4 @@ export const query = graphql`
     }
 `;
 
-export default article;
+export default news;
