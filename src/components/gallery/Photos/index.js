@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import image_placeholder3 from '../../../assests/images/image_placeholder3.png';
 import image_placeholder4 from '../../../assests/images/image_placeholder4.png';
@@ -8,9 +8,10 @@ import image_placeholder2 from '../../../assests/images/image_placeholder2.png';
 const Container = styled.div`
     display: grid;
     margin-top: 50px;
+    margin-bottom: 100px;
     grid-gap: 30px;
 
-    @media (min-width: 812px) {
+    @media (min-width: 800px) {
         grid-template-columns: 1fr 1fr;
     }
 
@@ -36,26 +37,26 @@ const OnlyImg = styled.img`
 `;
 
 const FloatLeftImg = styled.img`
-    @media (min-width: 320px) and (max-width: 812px) {
+    @media (min-width: 320px) and (max-width: 800px) {
         width: 50%;
         display: inline-block;
         float: left;
     }
 
-    @media (min-width: 812px) {
+    @media (min-width: 800px) {
         width: 100%;
         display: block;
     }
 `;
 
 const FloatRightImg = styled.img`
-    @media (min-width: 320px) and (max-width: 812px) {
+    @media (min-width: 320px) and (max-width: 800px) {
         width: 50%;
         display: inline-block;
         float: right;
     }
 
-    @media (min-width: 812px) {
+    @media (min-width: 800px) {
         width: 100%;
         display: block;
     }
@@ -76,40 +77,19 @@ const ImgCaption = styled.div`
     line-height: 27px;
     font-weight: 400;
 
-    @media (min-width: 320px) and (max-width: 812px) {
+    @media (min-width: 320px) and (max-width: 800px) {
         width: ${(props) => (props.top ? '100%' : '50%')};
         display: ${(props) => (props.top ? 'block' : 'inline-block')};
         text-align: ${(props) => (props.left ? 'left' : 'right')};
     }
 
-    @media (min-width: 812px) {
+    @media (min-width: 800px) {
         width: 100%;
         display: block;
     }
 `;
 
-function getWindowDimensions() {
-    const { innerWidth: width, innerHeight: height } = window;
-    return {
-        width,
-        height,
-    };
-}
-
 const Photos = () => {
-    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
-
-    useEffect(() => {
-        if (typeof window === 'undefined') return;
-
-        function handleResize() {
-            setWindowDimensions(getWindowDimensions());
-        }
-
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
     return (
         <Container>
             <ImgWithDescription>
@@ -122,27 +102,28 @@ const Photos = () => {
                 </ImgCaption>
             </ImgWithDescription>
 
-            {windowDimensions.width <= 812 ? (
-                <ImgWithDescription>
-                    <FloatTopImg src={image_placeholder5} />
-                    <ImgCaption top left>
-                        <CaptionTittle>Lorem ipsum dolor sit amet</CaptionTittle>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
-                        sit amet, consectetu adipiscing elit. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit.
-                    </ImgCaption>
-                </ImgWithDescription>
-            ) : (
-                <ImgWithDescription bottom>
-                    <ImgCaption top left>
-                        <CaptionTittle>Lorem ipsum dolor sit amet</CaptionTittle>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
-                        sit amet, consectetu adipiscing elit. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit.
-                    </ImgCaption>
-                    <FloatTopImg src={image_placeholder5} />
-                </ImgWithDescription>
-            )}
+            {/* < 812 */}
+
+            <ImgWithDescription>
+                <FloatTopImg src={image_placeholder5} />
+                <ImgCaption top left>
+                    <CaptionTittle>Lorem ipsum dolor sit amet</CaptionTittle>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
+                    amet, consectetu adipiscing elit. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit.
+                </ImgCaption>
+            </ImgWithDescription>
+
+            {/* <ImgWithDescription bottom>
+                <ImgCaption top left>
+                    <CaptionTittle>Lorem ipsum dolor sit amet</CaptionTittle>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
+                    amet, consectetu adipiscing elit. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit.
+                </ImgCaption>
+                <FloatTopImg src={image_placeholder5} />
+            </ImgWithDescription> */}
+
             <ImgWithDescription>
                 <FloatRightImg src={image_placeholder4} />
                 <ImgCaption right>
@@ -152,7 +133,7 @@ const Photos = () => {
                 </ImgCaption>
             </ImgWithDescription>
 
-            {windowDimensions.width <= 812 ? <OnlyImg src={image_placeholder2} /> : null}
+            <OnlyImg src={image_placeholder2} />
 
             <ImgWithDescription>
                 <FloatLeftImg src={image_placeholder3} />

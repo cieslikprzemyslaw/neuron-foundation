@@ -4,11 +4,12 @@ import Nav from '../components/staticComponents/Nav';
 import MobileNav from '../components/staticComponents/MobileNav';
 import Header from '../components/gallery/Header';
 import Photos from '../components/gallery/Photos';
+import Footer from '../components/staticComponents/Footer';
 
 const Wrapper = styled.div`
     width: 80%;
     margin: 100px auto 0;
-`
+`;
 
 const Gallery = () => {
     return (
@@ -19,6 +20,7 @@ const Gallery = () => {
                 <Header />
                 <Photos />
             </Wrapper>
+            <Footer />
         </div>
     );
 };
