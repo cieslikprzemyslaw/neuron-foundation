@@ -6,16 +6,14 @@ const Section = styled.footer`
     width: 100%;
     height: 168px;
     padding: 1rem 4rem;
-    background-color: ${backgroundColor};
+    background-color: #ffffff;
     border-top: 1px solid #c1c1c1;
     display: flex;
     flex-direction: column;
     align-items: space-between;
-    transform: translateY(-168px);
 
     @media (max-width: 850px) {
         height: 310px;
-        transform: translateY(-310px);
         padding: 2rem;
     }
 `;
