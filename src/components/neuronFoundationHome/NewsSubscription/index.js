@@ -6,9 +6,7 @@ import {validateEmail} from '../../common/validateEmail';
 
 const index = () => {
     const intl = useIntl();
-    const [inputValue, setInputValue] = useState(
-        `${intl.formatMessage({ id: `newslatter.email` })}`,
-    );
+    const [inputValue, setInputValue] = useState();
     const [showError, setShowError] = useState(false)
     const [showPassed, setShowPassed] = useState(false)
 
@@ -49,8 +47,8 @@ const index = () => {
                 <NewsletterInput
                     type="email"
                     value={inputValue}
+                    placeholder={intl.formatMessage({ id: `newslatter.email` })}
                     onChange={handleInputChange}
-                    onClick={clearInput}
                 />
                 <Button type="submit" onClick={handleSubmit} text={`ZAPISZ SIĘ`} width={212} />
             </NewsletterSubSection>
