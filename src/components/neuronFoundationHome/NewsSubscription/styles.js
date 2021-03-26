@@ -38,7 +38,7 @@ const NewsletterText = styled.h3``;
 
 const NewsletterInput = styled.input`
     width: 100%;
-    margin: 30px 0px;
+    margin: 15px 0px;
     height: 50px;
     border: 1px solid #f0f0f0;
     border-radius: 12px;
@@ -53,4 +53,16 @@ const NewsletterInput = styled.input`
     }
 `;
 
-export { Newsletter, NewsletterSubSection, NewsletterText, NewsletterInput };
+const PassedText = styled.p`
+    width: 100%;
+    margin: 15px 0 0 30px;
+    color: #2ee00b;
+`;
+
+const ErrorText = styled.p`
+    width: 100%;
+    margin: 15px 0 0 30px;
+    color: #f2545b;
+`;
+
+export { Newsletter, NewsletterSubSection, NewsletterText, NewsletterInput, PassedText, ErrorText };

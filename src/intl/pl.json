@@ -27,7 +27,9 @@
     "newslatter": {
         "title": "Chcesz by na bieżąco?",
         "title2": "DOŁĄCZ DO NEWSLETTERA",
-        "email": "adres e-mail"
+        "email": "adres e-mail",
+        "passed": "Subskrypcja dokończona",
+        "error": "Proszę podać prawidłowy adres e-mail"
     },
     "acorn": {
         "text": "Jesteśmy na etapie tworzenia platformy, która będzie darmowym narzędziem do realizacji projektów. Praca wre, programiści pracują nad platformą, graficy nad oprawą graficzną, a tłumacze nad wersją strony w różnych językach. W realizacji działań pomaga nam Event Storming, czyli nowa metoda, która pomaga porządkować informacjei działania potrzebne do stworzenia lub zmiany domeny biznesowej. Taką mapę myśli tworzy się na warsztatach, w których biorą udział zarówno programiści, jak i osoby realizujące projekt. Nie możemy doczekać się efektów!"

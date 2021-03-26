@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import Button from '../../staticComponents/Button';
-import { Newsletter, NewsletterSubSection, NewsletterText, NewsletterInput } from './styles';
+import { Newsletter, NewsletterSubSection, NewsletterText, NewsletterInput, PassedText, ErrorText } from './styles';
 import { useIntl } from 'gatsby-plugin-intl';
-import emailValidator from '../../common/emailValidator';
+import {validateEmail} from '../../common/validateEmail';
 
 const index = () => {
     const intl = useIntl();
     const [inputValue, setInputValue] = useState(
         `${intl.formatMessage({ id: `newslatter.email` })}`,
     );
+    const [showError, setShowError] = useState(false)
+    const [showPassed, setShowPassed] = useState(false)
 
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
@@ -18,13 +20,18 @@ const index = () => {
         setInputValue('');
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const isEmailValid = emailValidator(inputValue);
+   const handleSubmit = (e) => {
+       e.preventDefault();
+       const isEmailValid = validateEmail(inputValue);
 
-        if(isEmailValid) return console.log("dziala");
-        else return console.error("nie dziala");
-    }
+        if(isEmailValid){
+            setShowError(false);
+            setShowPassed(true);
+        }
+        if(!isEmailValid){
+            setShowError(true);
+        }
+   };
 
     return (
         <Newsletter>
@@ -33,20 +40,19 @@ const index = () => {
                 <NewsletterText>{intl.formatMessage({ id: `newslatter.title2` })}</NewsletterText>
             </NewsletterSubSection>
             <NewsletterSubSection>
+                <PassedText style={{ display: showPassed ? 'block' : 'none' }}>
+                    {intl.formatMessage({ id: 'newslatter.passed' })}
+                </PassedText>
+                <ErrorText style={{ display: showError ? 'block' : 'none' }}>
+                    {intl.formatMessage({ id: 'newslatter.error' })}
+                </ErrorText>
                 <NewsletterInput
-                    type="text"
                     type="email"
                     value={inputValue}
                     onChange={handleInputChange}
                     onClick={clearInput}
                 />
-                <Button
-                    type="submit"
-                    form="form1"
-                    onClick={handleSubmit}
-                    text={`ZAPISZ SIĘ`}
-                    width={212}
-                />
+                <Button type="submit" onClick={handleSubmit} text={`ZAPISZ SIĘ`} width={212} />
             </NewsletterSubSection>
         </Newsletter>
     );
