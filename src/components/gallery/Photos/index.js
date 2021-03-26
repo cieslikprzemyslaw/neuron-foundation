@@ -1,167 +1,202 @@
-import React from 'react';
-import styled from 'styled-components';
-import image_placeholder3 from '../../../assests/images/image_placeholder3.png';
-import image_placeholder4 from '../../../assests/images/image_placeholder4.png';
-import image_placeholder5 from '../../../assests/images/image_placeholder5.png';
-import image_placeholder2 from '../../../assests/images/image_placeholder2.png';
-
-const Container = styled.div`
-    display: grid;
-    margin-top: 50px;
-    margin-bottom: 100px;
-    grid-gap: 30px;
-
-    @media (min-width: 800px) {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    @media (min-width: 1200px) {
-        grid-template-columns: repeat(4, 1fr);
-    }
-`;
-
-const ImgWithDescription = styled.div`
-    background-color: #f5f5f5;
-    overflow: auto;
-    border-radius: 8px;
-    font-size: 2rem;
-
-    display: ${(props) => (props.bottom ? 'flex' : 'block')};
-    justify-content: flex-end;
-    flex-flow: column;
-`;
-
-const OnlyImg = styled.img`
-    width: 100%;
-    border-radius: 8px;
-`;
-
-const FloatLeftImg = styled.img`
-    @media (min-width: 320px) and (max-width: 800px) {
-        width: 50%;
-        display: inline-block;
-        float: left;
-    }
-
-    @media (min-width: 800px) {
-        width: 100%;
-        display: block;
-    }
-`;
-
-const FloatRightImg = styled.img`
-    @media (min-width: 320px) and (max-width: 800px) {
-        width: 50%;
-        display: inline-block;
-        float: right;
-    }
-
-    @media (min-width: 800px) {
-        width: 100%;
-        display: block;
-    }
-`;
-
-const FloatTopImg = styled.img`
-    width: 100%;
-    display: block;
-`;
-
-const CaptionTittle = styled.h4`
-    margin-bottom: 10px;
-    font-weight: 600;
-`;
-
-const ImgCaption = styled.div`
-    padding: 10px;
-    line-height: 27px;
-    font-weight: 400;
-
-    @media (min-width: 320px) and (max-width: 800px) {
-        width: ${(props) => (props.top ? '100%' : '50%')};
-        display: ${(props) => (props.top ? 'block' : 'inline-block')};
-        text-align: ${(props) => (props.left ? 'left' : 'right')};
-    }
-
-    @media (min-width: 800px) {
-        width: 100%;
-        display: block;
-    }
-`;
+import React, { useState, useEffect } from 'react';
+import placeholder3 from '../../../assests/images/gallery/placeholder3.png';
+import placeholder4 from '../../../assests/images/gallery/placeholder4.png';
+import placeholder5 from '../../../assests/images/gallery/placeholder5.png';
+import placeholder2 from '../../../assests/images/gallery/placeholder2.png';
+import placeholder7 from '../../../assests/images/gallery/placeholder7.png';
+import placeholder8 from '../../../assests/images/gallery/placeholder8.png';
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
+import {
+    GalleryContainer,
+    VerticalImgWithDescription,
+    SliderImgWithDescription,
+    HorizontalImgWithDescription,
+    ImgOnSmallerScreens,
+    ImgOnLargerScreens,
+    HorizontalImg,
+    VerticalImg,
+    CaptionTittle,
+    ImgCaption,
+    SliderImgCaption,
+    BackBtn,
+    NextBtn,
+    CloseBtn,
+    Carousel,
+    BluredBackground,
+    LeftArrow,
+    RightArrow,
+} from './styles.js';
 
 const Photos = () => {
+    const [isSliderActive, setIsSliderActive] = useState(false);
+
+    const imgClickHandler = (event) => {
+        if (event.target.hasAttribute('data-only-img')) return;
+        if (event.target.closest('img')) setIsSliderActive(true);
+    };
+
+    // const resizeHandler = (event) => {
+    //     if (event.target.innerWidth < 1200 && isSliderActive)
+    //         setIsSliderActive((prevState) => !prevState);
+    // };
+
+    // useEffect(() => {
+    //     window.addEventListener('resize', resizeHandler);
+
+    //     return () => {
+    //         window.removeEventListener('resize', resizeHandler);
+    //     };
+    // }, []);
+
     return (
-        <Container>
-            <ImgWithDescription>
-                <FloatLeftImg src={image_placeholder3} />
-                <ImgCaption left>
-                    <CaptionTittle>Lorem ipsum dolor sit amet</CaptionTittle>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit
-                    amet, consectetu adipiscing elit.Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit.
-                </ImgCaption>
-            </ImgWithDescription>
+        <>
+            {isSliderActive && (
+                <Carousel>
+                    <BluredBackground>
+                        <CarouselProvider
+                            naturalSlideWidth={100}
+                            naturalSlideHeight={40}
+                            totalSlides={3}
+                            infinite
+                        >
+                            <Slider>
+                                <Slide index={0}>
+                                    <div style={{ width: '30%', height: '100%', margin: '0 auto' }}>
+                                        <SliderImgWithDescription>
+                                            <VerticalImg src={placeholder5} />
+                                            <SliderImgCaption>
+                                                <CaptionTittle>
+                                                    Lorem ipsum dolor sit amet
+                                                </CaptionTittle>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                elit. Lorem ipsum dolor sit amet, consectetu
+                                                adipiscing elit. Lorem ipsum dolor sit amet,
+                                                consectetur adipiscing elit.
+                                            </SliderImgCaption>
+                                        </SliderImgWithDescription>
+                                    </div>
+                                </Slide>
+                                <Slide index={1}>
+                                    <div style={{ width: '30%', height: '100%', margin: '0 auto' }}>
+                                        <SliderImgWithDescription>
+                                            <VerticalImg src={placeholder5} />
+                                            <SliderImgCaption>
+                                                <CaptionTittle>
+                                                    Lorem ipsum dolor sit amet
+                                                </CaptionTittle>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                elit. Lorem ipsum dolor sit amet, consectetu
+                                                adipiscing elit. Lorem ipsum dolor sit amet,
+                                                consectetur adipiscing elit.
+                                            </SliderImgCaption>
+                                        </SliderImgWithDescription>
+                                    </div>
+                                    .
+                                </Slide>
+                                <Slide index={2}>
+                                    <div style={{ width: '30%', height: '100%', margin: '0 auto' }}>
+                                        <SliderImgWithDescription>
+                                            <VerticalImg src={placeholder5} />
+                                            <SliderImgCaption>
+                                                <CaptionTittle>
+                                                    Lorem ipsum dolor sit amet
+                                                </CaptionTittle>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                elit. Lorem ipsum dolor sit amet, consectetu
+                                                adipiscing elit. Lorem ipsum dolor sit amet,
+                                                consectetur adipiscing elit.
+                                            </SliderImgCaption>
+                                        </SliderImgWithDescription>
+                                    </div>
+                                </Slide>
+                            </Slider>
+                            <BackBtn>
+                                <ButtonBack>
+                                    <LeftArrow />
+                                </ButtonBack>
+                            </BackBtn>
+                            <NextBtn>
+                                <ButtonNext>
+                                    <RightArrow />
+                                </ButtonNext>
+                            </NextBtn>
+                            <CloseBtn onClick={() => setIsSliderActive(false)} />
+                        </CarouselProvider>
+                    </BluredBackground>
+                </Carousel>
+            )}
 
-            {/* < 812 */}
+            <GalleryContainer onClick={imgClickHandler}>
+                {!isSliderActive && (
+                    <>
+                        <HorizontalImgWithDescription left>
+                            <HorizontalImg src={placeholder3} />
+                            <ImgCaption left>
+                                <CaptionTittle>Lorem ipsum dolor sit amet</CaptionTittle>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum
+                                dolor sit amet, consectetu adipiscing elit.Lorem ipsum dolor sit
+                                amet, consectetur adipiscing elit.
+                            </ImgCaption>
+                        </HorizontalImgWithDescription>
 
-            <ImgWithDescription>
-                <FloatTopImg src={image_placeholder5} />
-                <ImgCaption top left>
-                    <CaptionTittle>Lorem ipsum dolor sit amet</CaptionTittle>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
-                    amet, consectetu adipiscing elit. Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit.
-                </ImgCaption>
-            </ImgWithDescription>
+                        <VerticalImgWithDescription>
+                            <VerticalImg src={placeholder5} />
+                            <ImgCaption bottom>
+                                <CaptionTittle>Lorem ipsum dolor sit amet</CaptionTittle>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
+                                dolor sit amet, consectetu adipiscing elit. Lorem ipsum dolor sit
+                                amet, consectetur adipiscing elit.
+                            </ImgCaption>
+                        </VerticalImgWithDescription>
 
-            {/* <ImgWithDescription bottom>
-                <ImgCaption top left>
-                    <CaptionTittle>Lorem ipsum dolor sit amet</CaptionTittle>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
-                    amet, consectetu adipiscing elit. Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit.
-                </ImgCaption>
-                <FloatTopImg src={image_placeholder5} />
-            </ImgWithDescription> */}
+                        <ImgOnLargerScreens data-only-img src={placeholder7} />
 
-            <ImgWithDescription>
-                <FloatRightImg src={image_placeholder4} />
-                <ImgCaption right>
-                    <CaptionTittle>Lorem ipsum dolor sit amet</CaptionTittle>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
-                    amet.
-                </ImgCaption>
-            </ImgWithDescription>
+                        <HorizontalImgWithDescription>
+                            <HorizontalImg src={placeholder4} />
+                            <ImgCaption right>
+                                <CaptionTittle>Lorem ipsum dolor sit amet</CaptionTittle>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
+                                dolor sit amet.
+                            </ImgCaption>
+                        </HorizontalImgWithDescription>
+                    </>
+                )}
 
-            <OnlyImg src={image_placeholder2} />
+                <ImgOnSmallerScreens data-only-img src={placeholder2} />
 
-            <ImgWithDescription>
-                <FloatLeftImg src={image_placeholder3} />
-                <ImgCaption left>
-                    <CaptionTittle>Lorem ipsum dolor sit amet</CaptionTittle>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit
-                    amet, consectetu adipiscing elit.Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit.
-                </ImgCaption>
-            </ImgWithDescription>
-            <ImgWithDescription>
-                <FloatTopImg src={image_placeholder5} />
-                <ImgCaption top left>
-                    <CaptionTittle>Lorem ipsum dolor sit amet</CaptionTittle>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
-                    amet, consectetu adipiscing elit. Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit.
-                </ImgCaption>
-            </ImgWithDescription>
-            <ImgWithDescription>
-                <FloatRightImg src={image_placeholder4} />
-                <ImgCaption right>
-                    <CaptionTittle>Lorem ipsum dolor sit amet</CaptionTittle>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
-                    amet.
-                </ImgCaption>
-            </ImgWithDescription>
-        </Container>
+                <HorizontalImgWithDescription left>
+                    <HorizontalImg src={placeholder3} />
+                    <ImgCaption left>
+                        <CaptionTittle>Lorem ipsum dolor sit amet</CaptionTittle>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor
+                        sit amet, consectetu adipiscing elit.Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit.
+                    </ImgCaption>
+                </HorizontalImgWithDescription>
+
+                <ImgOnLargerScreens data-only-img src={placeholder8} />
+
+                <VerticalImgWithDescription>
+                    <VerticalImg src={placeholder5} />
+                    <ImgCaption bottom>
+                        <CaptionTittle>Lorem ipsum dolor sit amet</CaptionTittle>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
+                        sit amet, consectetu adipiscing elit. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit.
+                    </ImgCaption>
+                </VerticalImgWithDescription>
+
+                <HorizontalImgWithDescription>
+                    <HorizontalImg src={placeholder4} />
+                    <ImgCaption right>
+                        <CaptionTittle>Lorem ipsum dolor sit amet</CaptionTittle>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
+                        sit amet.
+                    </ImgCaption>
+                </HorizontalImgWithDescription>
+            </GalleryContainer>
+        </>
     );
 };
 
