@@ -14,10 +14,6 @@ const index = () => {
         setInputValue(e.target.value);
     };
 
-    const clearInput = () => {
-        setInputValue('');
-    };
-
    const handleSubmit = (e) => {
        e.preventDefault();
        const isEmailValid = validateEmail(inputValue);

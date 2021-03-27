@@ -8,6 +8,7 @@ import MobileNavBtn from './MobileNavBtn';
 import SocialMedia from '../../common/SocialMedia';
 import { allProjectsList } from '../../common/commonData';
 import logoSrc from '../../../assests/images/Neuron Foundation.png';
+import {BiSearchAlt2} from 'react-icons/bi';
 import {
     MobileNavMenu,
     MobileNavItem,
@@ -17,6 +18,8 @@ import {
     MobileNavItemLast,
     Input,
     WhiteMenu,
+    SearchWrapper,
+    Button,
 } from './styles';
 
 const documentGlobal = typeof document !== 'undefined';
@@ -63,7 +66,11 @@ const MobileNav = () => {
             </MobileNavMenu>
             <MobileList open={homeMenu}>
                 <WhiteMenu>
-                    <Input/>
+                    <SearchWrapper style={{ width: '100%' }}>
+                        <Input />
+                        <Button type="submit">{<BiSearchAlt2 />}</Button>
+                    </SearchWrapper>
+
                     {whiteMenu.map((item) => {
                         return (
                             <MobileNavItem key={item[0]}>
@@ -72,7 +79,7 @@ const MobileNav = () => {
                                     to={item[2]}
                                     style={{ color: '#000' }}
                                 >
-                                   {formatMessage(item[0])}
+                                    {formatMessage(item[0])}
                                 </StyledLink>
                             </MobileNavItem>
                         );
