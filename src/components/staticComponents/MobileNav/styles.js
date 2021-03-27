@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'gatsby-plugin-intl';
 
 import styled, { keyframes } from 'styled-components';
-import Search from '../../../assests/images/search.png';
 
 const appear = keyframes`
  0% {
@@ -159,14 +158,14 @@ const MobileBtn = styled.div`
 `;
 
 const Input = styled.input`
-    width: 90%;
+    width: 85%;
     display: block;
-    margin: 30px auto;
+    margin: 30px 0;
     height: 50px;
     border: 1px solid #f0f0f0;
-    border-radius: 12px;
-    background-color: #F5F5F5;
-    bacground: url(${Search}) left no repeat;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    background-color: #f5f5f5;
     padding: 16px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -189,6 +188,29 @@ const WhiteMenu = styled.div`
     }
 `;
 
+const SearchWrapper = styled.section`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+const Button = styled.button`
+    padding: 16px;
+    height: 50px;
+    font-size: 2.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-color: #f5f5f5;
+
+    &:hover{
+        cursor: pointer;
+    }
+`;
 
 
 export {
@@ -203,4 +225,6 @@ export {
     MobileNavItemLast,
     Input,
     WhiteMenu,
+    SearchWrapper,
+    Button,
 };
