@@ -27,6 +27,22 @@ const index = () => {
         }
    };
 
+    const handleInputChange = (e) => {
+        setInputValue(e.target.value);
+    };
+
+    const clearInput = () => {
+        setInputValue('');
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const isEmailValid = emailValidator(inputValue);
+
+        if(isEmailValid) return console.log("dziala");
+        else return console.error("nie dziala");
+    }
+
     return (
         <Newsletter>
             <NewsletterSubSection>
