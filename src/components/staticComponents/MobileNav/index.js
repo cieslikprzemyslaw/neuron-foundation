@@ -8,6 +8,10 @@ import MobileNavBtn from './MobileNavBtn';
 import SocialMedia from '../../common/SocialMedia';
 import { allProjectsList } from '../../common/commonData';
 import logoSrc from '../../../assests/images/Neuron Foundation.png';
+<<<<<<< HEAD:src/components/staticComponents/MobileNav/index.js
+=======
+import {BiSearchAlt2} from 'react-icons/bi';
+>>>>>>> Przemek-Home-Page:src/components/staticComponents/MobileNav/index.js
 import {
     MobileNavMenu,
     MobileNavItem,
@@ -17,6 +21,11 @@ import {
     MobileNavItemLast,
     Input,
     WhiteMenu,
+<<<<<<< HEAD:src/components/staticComponents/MobileNav/index.js
+=======
+    SearchWrapper,
+    Button,
+>>>>>>> Przemek-Home-Page:src/components/staticComponents/MobileNav/index.js
 } from './styles';
 
 const documentGlobal = typeof document !== 'undefined';
@@ -63,6 +72,7 @@ const MobileNav = () => {
             </MobileNavMenu>
             <MobileList open={homeMenu}>
                 <WhiteMenu>
+<<<<<<< HEAD:src/components/staticComponents/MobileNav/index.js
                     <Input/>
                     {whiteMenu.map((item) => {
                         return (
@@ -73,6 +83,22 @@ const MobileNav = () => {
                                     style={{ color: '#000' }}
                                 >
                                    {formatMessage(item[0])}
+=======
+                    <SearchWrapper style={{ width: '100%' }}>
+                        <Input />
+                        <Button type="submit">{<BiSearchAlt2 />}</Button>
+                    </SearchWrapper>
+
+                    {whiteMenu.map((item) => {
+                        return (
+                            <MobileNavItem key={item[0]}>
+                                <StyledLink
+                                    onClick={item[1]}
+                                    to={item[2]}
+                                    style={{ color: '#000' }}
+                                >
+                                    {formatMessage(item[0])}
+>>>>>>> Przemek-Home-Page:src/components/staticComponents/MobileNav/index.js
                                 </StyledLink>
                             </MobileNavItem>
                         );
