@@ -3,6 +3,8 @@ import smartOak from '../../../assests/images/logo-SmartOak.png';
 import acorn from '../../../assests/images/logo-Acorn.png';
 import acornBg from '../../../assests/images/Acorn-bgImage.png';
 
+import {respondTo} from '../../common/respondTo';
+
 const Wrapper = styled.section`
     background: url(${acornBg}) no-repeat center center;
     -webkit-background-size: cover;
@@ -28,9 +30,9 @@ const TextSection = styled.section`
 const TitleLogo1 = styled.img.attrs({
     src: `${smartOak}`,
 })`
-    @media (min-width: 800px) {
+    ${respondTo.md`
         display: none;
-    }
+    `}
 `;
 
 const TitleLogo2 = styled.img.attrs({
@@ -38,16 +40,19 @@ const TitleLogo2 = styled.img.attrs({
 })`
     display: none;
 
-    @media (min-width: 800px) {
+    ${respondTo.md`
         display: block;
-    }
+    `}
 `;
 
 const Text = styled.p`
     color: #fff;
     margin-top: 50px;
     text-align: right;
-    max-width: 40%;
+
+    ${respondTo.md`
+        max-width: 40%;
+    `}
 `;
 
 export { Wrapper, Overlay, TextSection, TitleLogo1, TitleLogo2, Text };

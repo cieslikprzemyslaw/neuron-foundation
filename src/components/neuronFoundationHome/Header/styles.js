@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import image from '../../../assests/images/Header.png'
 
+import { respondTo } from '../../common/respondTo';
+
 const Overlapping = styled.section`
     background-color: rgba(0, 0, 0, 0.3);
     height: 100vh;
@@ -22,16 +24,16 @@ const TextWrapper = styled.section`
     color: white;
     text-align: justify;
 
-    @media(min-width: 800px){
+    ${respondTo.md`
         top: 60%;
         left: 5%;
         transform: translate(-0%, -50%);
         max-width: 40%;
-    }
+    `}
 
-    @media(min-width: 1440px){
+    ${respondTo.xxl`
         max-width: 30%;
-    }
+    `}
 `;
 
 const Title = styled.h3`

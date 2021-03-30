@@ -1,14 +1,16 @@
 import styled from 'styled-components';
 
+import { respondTo } from '../../common/respondTo';
+
 const SocialMediaSection = styled.section`
     padding: 65px 5vw;
     background-color: #f5f5f5;
 
-    @media (min-width: 800px) {
+    ${respondTo.md`
         display: flex;
         justify-content: space-between;
         align-items: center;
-    }
+    `}
 `;
 
 const Title = styled.h3``;
@@ -18,10 +20,10 @@ const SocialMediaWrapper = styled.section`
     flex-wrap: wrap;
     margin: 20px auto;
 
-    @media (min-width: 800px) {
+    ${respondTo.md`
         max-width: 50%;
         margin: 0;
-    }
+    `}
 `;
 
 const ExternalLink = styled.a`
@@ -33,10 +35,10 @@ const ExternalLink = styled.a`
     text-decoration: none;
     transition: all 0.15s ease;
 
-    @media (min-width: 800px) {
+    ${respondTo.md`
         margin: 20px 15px;
         width: 40%;
-    }
+    `}
 `;
 
 const ExternalText = styled.p`
