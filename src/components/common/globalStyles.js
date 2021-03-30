@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 import { respondTo } from './respondTo';
 
 export const backgroundColor = () => css`
-    #f7f6f5;
+    background-color: #f7f6f5;
 `;
 
 export const h1 = () => css`

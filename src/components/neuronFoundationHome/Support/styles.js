@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { respondTo } from '../../common/respondTo';
+
 const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
@@ -16,9 +18,9 @@ const Title = styled.h2``;
 const Text = styled.p``;
 
 const ButtonWrapper = styled.section`
-    @media (min-width: 1200px) {
+    ${respondTo.xl`
         display: flex;
-    }
+    `}
 `;
 
 export { Wrapper, Title, Text, ButtonWrapper };

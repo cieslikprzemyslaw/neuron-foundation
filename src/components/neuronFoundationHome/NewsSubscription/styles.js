@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { respondTo } from '../../common/respondTo';
+
 const Newsletter = styled.section`
     display: flex;
     flex-wrap: wrap;
@@ -9,18 +11,18 @@ const Newsletter = styled.section`
 
     background-color: #f5f5f5;
 
-    @media (min-width: 800px) {
+    ${respondTo.md`
         justify-content: space-around;
         align-items: center;
-    }
+    `}
 `;
 
 const NewsletterSubSection = styled.section`
     width: 100%;
 
-    @media (min-width: 800px) {
+    ${respondTo.md`
         width: 45%;
-    }
+    `}
 
     &:nth-child(2) {
         display: flex;
@@ -48,9 +50,9 @@ const NewsletterInput = styled.input`
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 
-    @media (min-width: 1024px) {
+    ${respondTo.lg`
         width: 45%;
-    }
+    `}
 `;
 
 const PassedText = styled.p`

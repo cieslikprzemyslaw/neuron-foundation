@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { backgroundColor } from '../../common/globalStyles';
 
 const Section = styled.footer`
     font-family: Open Sans;
