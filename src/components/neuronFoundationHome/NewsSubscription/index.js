@@ -1,31 +1,38 @@
 import React, { useState } from 'react';
 import Button from '../../staticComponents/Button';
-import { Newsletter, NewsletterSubSection, NewsletterText, NewsletterInput, PassedText, ErrorText } from './styles';
+import {
+    Newsletter,
+    NewsletterSubSection,
+    NewsletterText,
+    NewsletterInput,
+    PassedText,
+    ErrorText,
+} from './styles';
 import { useIntl } from 'gatsby-plugin-intl';
-import {validateEmail} from '../../common/validateEmail';
+import { validateEmail } from '../../common/validateEmail';
 
 const index = () => {
     const intl = useIntl();
     const [inputValue, setInputValue] = useState();
-    const [showError, setShowError] = useState(false)
-    const [showPassed, setShowPassed] = useState(false)
+    const [showError, setShowError] = useState(false);
+    const [showPassed, setShowPassed] = useState(false);
 
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
     };
 
-   const handleSubmit = (e) => {
-       e.preventDefault();
-       const isEmailValid = validateEmail(inputValue);
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const isEmailValid = validateEmail(inputValue);
 
-        if(isEmailValid){
+        if (isEmailValid) {
             setShowError(false);
             setShowPassed(true);
         }
-        if(!isEmailValid){
+        if (!isEmailValid) {
             setShowError(true);
         }
-   };
+    };
 
     return (
         <Newsletter>
