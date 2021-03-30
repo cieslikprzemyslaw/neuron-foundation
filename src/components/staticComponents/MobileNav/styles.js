@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'gatsby-plugin-intl';
 
 import styled, { keyframes } from 'styled-components';
-import Search from '../../../assests/images/search.png';
 
 const appear = keyframes`
  0% {

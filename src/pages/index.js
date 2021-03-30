@@ -19,12 +19,12 @@ const IndexPage = ({ data }) => {
     return (
         <Wrapper>
             <Nav />
-            <FoundationMenu/>
+            <FoundationMenu />
             <MobileNav />
             <Header />
             <News dataImage={data} />
-            <FoundationIdea />
             <SocialMedia />
+            <FoundationIdea />
             <NewsSubscription />
             <Acorn />
             <Support />
