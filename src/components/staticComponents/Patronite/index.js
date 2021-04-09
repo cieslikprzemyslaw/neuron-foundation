@@ -10,19 +10,19 @@ import wedka from '../../../assests/images/wedka-stowarzyszenie-logo.png';
 
 const Patronite = () => {
     const patronites = [
-        [cymon, 'cymon-frontdev-logo'],
-        [drMasa, 'dr-masa-logo'],
-        [fizjosens, 'fizjosens-logo'],
-        [imperia, 'imperia-logo'],
-        [kontenty, 'kontenty-logo'],
-        [wedka, 'wedka-logo'],
+        {name: cymon , title:"cymon-frontdev-logo"},
+        {name: drMasa ,title:"dr-masa-logo"},
+        {name: fizjosens ,title:"fizjosens-logo"},
+        {name: imperia ,title:"imperia-logo"},
+        {name: kontenty ,title:"kontenty-logo"},
+        {name: wedka ,title:"wedka-logo"}, 
     ];
 
     return (
         <PatroniteWrapper>
             <PatroniteSection>
                 {patronites.map((logo) => {
-                    return <Logo src={logo[0]} alt={logo[1]} key={logo[1]} />;
+                    return <Logo src={logo.name} alt={logo.title} key={logo.name} />;
                 })}
             </PatroniteSection>
         </PatroniteWrapper>
