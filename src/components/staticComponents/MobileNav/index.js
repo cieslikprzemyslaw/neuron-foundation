@@ -35,7 +35,7 @@ const MobileNav = () => {
     const whiteMenu = [
         ['news', () => null, '/contact/'],
         ['join', () => null, '/contact/'],
-        ['gallery', () => null, '/contact/'],
+        ['gallery', () => null, '/gallery/'],
     ];
 
     if (documentGlobal) {

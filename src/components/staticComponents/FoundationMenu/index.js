@@ -11,7 +11,7 @@ const index = () => {
         ['mainPage', '/contact/'],
         ['news',  '/contact/'],
         ['join', '/contact/'],
-        ['gallery', '/contact/'],
+        ['gallery', '/gallery/'],
     ];
 
     return (
