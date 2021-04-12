@@ -3,14 +3,7 @@ import React from 'react';
 import { Header, DateParagraph } from '../neuronFoundationHome/News/styles';
 import Description from './Description';
 import ShareIcon from './ShareIcon';
-import {
-    ImageWrapper,
-    LinkBack,
-    LinkNext,
-    ArticleContainer,
-    ContentWrapper,
-    Image,
-} from './styles';
+import { LinkBack, LinkNext, ArticleContainer, ContentWrapper, Image } from './styles';
 
 const ArticleHeader = Header('div');
 const ArticleDateParagraph = DateParagraph('p');
@@ -18,9 +11,11 @@ const ArticleDateParagraph = DateParagraph('p');
 const index = ({ dataImage }) => {
     return (
         <>
-            <ImageWrapper>
-                <Image fluid={dataImage.file.childImageSharp.fluid} />
-            </ImageWrapper>
+            <Image
+                objectFit="cover"
+                objectPosition="50% 50%"
+                fluid={dataImage.file.childImageSharp.fluid}
+            />
             <ArticleContainer>
                 <LinkBack to="/pl">{' < '} Aktualności</LinkBack>
                 <ArticleHeader>Prasówka pozytywnych wiadomośc</ArticleHeader>

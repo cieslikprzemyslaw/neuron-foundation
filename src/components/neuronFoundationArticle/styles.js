@@ -2,13 +2,9 @@ import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-export const ImageWrapper = styled.div`
-    max-height: 480px;
-    overflow: hidden;
-`;
-
 export const Image = styled(Img)`
     margin-bottom: 1.8rem;
+    max-height: 480px;
 `;
 export const LinkBack = styled(Link)`
     text-decoration: none;
