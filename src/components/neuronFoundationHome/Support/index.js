@@ -18,19 +18,19 @@ const index = () => {
                     onClick={() => console.log(`working`)}
                     text={`WPŁAĆ NA KONTO`}
                     width={270}
-                    margin={25}
+                    style={{margin: "25px 50px"}}
                 />
                 <Button
                     onClick={() => console.log(`working`)}
                     text={`PRZEKAŻ 1% PODATKU`}
                     width={270}
-                    margin={25}
+                    style={{margin: "25px 50px"}}
                 />
                 <Button
                     onClick={() => console.log(`working`)}
                     text={`SPRAWDZ INNE OPCJE`}
                     width={270}
-                    margin={25}
+                    style={{margin: "25px 50px"}}
                 />
             </ButtonWrapper>
             <Text>

@@ -1,10 +1,10 @@
 import React from 'react';
 import MainParagraph from '../components/neuronFoundationHome/MainParagraph/index';
-import Supports from '../components/neuronFoundationHome/Supports/index';
-import {breakpoints} from '../components/common/breakpoints';
 import Footer from '.././components/staticComponents/Footer/index';
 import Nav from '.././components/staticComponents/Nav/index';
 import styled from 'styled-components';
+import FoundationMenu from '../components/staticComponents/FoundationMenu';
+import Patronite from '../components/staticComponents/Patronite';
 
 
 
@@ -17,8 +17,9 @@ const Join = () => {
     return (
         <Main>
             <Nav/>
+            <FoundationMenu/>
             <MainParagraph />
-            <Supports />
+            <Patronite />
             <Footer/>
         </Main>
     );

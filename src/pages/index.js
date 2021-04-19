@@ -22,9 +22,9 @@ const IndexPage = ({ data }) => {
             <FoundationMenu />
             <MobileNav />
             <Header />
-            <News dataImage={data} />
-            <SocialMedia />
             <FoundationIdea />
+            <SocialMedia />
+            <News dataImage={data} />
             <NewsSubscription />
             <Acorn />
             <Support />

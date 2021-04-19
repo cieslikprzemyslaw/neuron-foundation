@@ -3,7 +3,6 @@ import styled from 'styled-components';
 const PatroniteWrapper = styled.section`
     position: relative;
     width: 100%;
-    background-color: #f7f6f5;
 `;
 
 const PatroniteSection = styled.section`
