@@ -15,13 +15,13 @@ const Main = styled.main`
 
 const Join = () => {
     return (
-        <Main>
+        <>
             <Nav/>
             <FoundationMenu/>
             <MainParagraph />
             <Patronite />
             <Footer/>
-        </Main>
+        </>
     );
 };
 

@@ -7,11 +7,10 @@ const PatroniteWrapper = styled.section`
 
 const PatroniteSection = styled.section`
     position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 70%;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    width: 100rem;
+    justify-items:center;
     margin: 0 auto;
     padding: 65px 0 65px 0;
     z-index: 5;
@@ -23,6 +22,9 @@ const PatroniteSection = styled.section`
     @media (max-width: 1024px) {
         width: 100%;
         padding: 0 0 0 0;
+    }
+    @media (max-width: 640px) {
+        grid-template-columns: repeat(2,1fr);
     }
 `;
 

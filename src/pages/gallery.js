@@ -7,7 +7,6 @@ import Photos from '../components/gallery/Photos';
 import Footer from '../components/staticComponents/Footer';
 import FoundationMenu from '../components/staticComponents/FoundationMenu';
 
-
 const Wrapper = styled.div`
     width: 80%;
     margin: 100px auto 0;
@@ -17,6 +16,7 @@ const Gallery = () => {
     return (
         <div>
             <Nav />
+            <FoundationMenu />
             <MobileNav />
             <FoundationMenu/>
             <Wrapper>
