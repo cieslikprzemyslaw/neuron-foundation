@@ -2,13 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Title = styled.h1`
-  margin-bottom: 50px;
-`
+    margin-bottom: 50px;
+`;
 
 const SubTitle = styled.h2`
-  font-weight: normal;
-  text-align: justify;
-`
+    font-weight: normal;
+
+    @media (max-width: 800px) {
+        font-size: 14px;
+        font-weight: 600;
+    }
+`;
 
 const Header = () => {
     return (

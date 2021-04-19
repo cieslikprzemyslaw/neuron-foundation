@@ -14,11 +14,9 @@ const appear = keyframes`
 
 const fadeInFromNone = keyframes`
     0% {
-
        opacity: 0;
    }
    100% {
-
        opacity: 1;
    }
 `;
@@ -37,11 +35,9 @@ const MobileNavMenu = styled.div`
     height: 5rem;
     border-bottom: 0.5px rgba(0, 0, 0, 0.3) solid;
     backdrop-filter: blur(27.1828px);
-
     @media screen and (max-width: 900px) {
         display: flex;
     }
-
     @media only screen and (orientation: landscape) {
         img {
             height: 4.5rem;
@@ -53,7 +49,6 @@ const DropDownButton = styled.div`
     justify-content: space-between;
     align-items: center;
     border-bottom: ${(props) => (props.open ? 'none' : '1px solid #393939')};
-
     svg {
         font-size: 1.5rem;
     }
@@ -69,16 +64,12 @@ const DropDownLink = styled.div`
 const MobileNavItem = styled.li`
     position: relative;
     font-weight: 400;
-
     margin-left: ${(props) => (props.dropdown ? '0rem' : '2rem')};
     list-style-type: none;
-
     width: ${(props) => (props.dropdown ? '100%' : '90%')};
-
     opacity: 0;
     animation: 0.5s ${appear} forwards;
     animation-delay: 0.2s;
-
     @media only screen and (orientation: landscape) {
         font-size: 1.4rem;
         padding: 1rem;
@@ -92,13 +83,10 @@ const MobileNavItemLast = styled.li`
     padding-top: 7rem;
     margin-left: ${(props) => (props.dropdown ? '0rem' : '2rem')};
     list-style-type: none;
-
     width: ${(props) => (props.dropdown ? '100%' : '90%')};
-
     opacity: 0;
     animation: 0.5s ${appear} forwards;
     animation-delay: 0.2s;
-
     & > div > div {
         width: 90vw;
         display: flex;
@@ -126,7 +114,6 @@ const MobileListWrapper = styled.ul`
     color: #fff;
     z-index: 999999999;
     padding-top: ${(props) => (props.dropdown ? '0rem' : '5rem')};
-
     @media screen and (max-width: 900px) {
         display: block;
     }
@@ -170,7 +157,6 @@ const Input = styled.input`
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-
     @media (min-width: 1024px) {
         width: 45%;
     }
@@ -182,8 +168,7 @@ const WhiteMenu = styled.div`
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
-
-    &>li:last-child>a{
+    & > li:last-child > a {
         border-bottom: 0px solid black;
     }
 `;
@@ -206,12 +191,10 @@ const Button = styled.button`
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
     background-color: #f5f5f5;
-
-    &:hover{
+    &:hover {
         cursor: pointer;
     }
 `;
-
 
 export {
     MobileNavMenu,

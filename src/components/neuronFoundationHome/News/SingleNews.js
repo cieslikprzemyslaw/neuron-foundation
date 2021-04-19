@@ -9,7 +9,9 @@ const LinkDateParagraph = DateParagraph(Link);
 const SingleNews = ({ image }) => {
     return (
         <News>
-            <Image fluid={image.childImageSharp.fluid} />
+            <Link to="/article">
+                <Image fluid={image.childImageSharp.fluid} />
+            </Link>
             <LinksContainer>
                 <LinkHeader to="/article">Prasówka pozytywnych wiadomości</LinkHeader>
                 <LinkParagraph to="/article">

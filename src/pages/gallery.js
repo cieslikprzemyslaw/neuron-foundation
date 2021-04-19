@@ -5,6 +5,7 @@ import MobileNav from '../components/staticComponents/MobileNav';
 import Header from '../components/gallery/Header';
 import Photos from '../components/gallery/Photos';
 import Footer from '../components/staticComponents/Footer';
+import FoundationMenu from '../components/staticComponents/FoundationMenu';
 
 const Wrapper = styled.div`
     width: 80%;
@@ -15,7 +16,9 @@ const Gallery = () => {
     return (
         <div>
             <Nav />
+            <FoundationMenu />
             <MobileNav />
+            <FoundationMenu/>
             <Wrapper>
                 <Header />
                 <Photos />

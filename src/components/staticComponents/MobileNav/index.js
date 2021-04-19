@@ -8,7 +8,7 @@ import MobileNavBtn from './MobileNavBtn';
 import SocialMedia from '../../common/SocialMedia';
 import { allProjectsList } from '../../common/commonData';
 import logoSrc from '../../../assests/images/Neuron Foundation.png';
-import {BiSearchAlt2} from 'react-icons/bi';
+import { BiSearchAlt2 } from 'react-icons/bi';
 import {
     MobileNavMenu,
     MobileNavItem,
@@ -33,9 +33,9 @@ const MobileNav = () => {
     const [langMenu, setLangMenu] = useState(false);
 
     const whiteMenu = [
-        ["news", () => null, '/contact/'],
-        ["join", () => null, '/contact/'],
-        ["gallery", () => null, '/contact/'],
+        ['news', () => null, '/contact/'],
+        ['join', () => null, '/contact/'],
+        ['gallery', () => null, '/gallery/'],
     ];
 
     if (documentGlobal) {
@@ -46,10 +46,10 @@ const MobileNav = () => {
         }
     }
 
-     const formatMessage = ( point ) =>
-         intl.formatMessage({
-             id: `navigation.${point}`,
-         });
+    const formatMessage = (point) =>
+        intl.formatMessage({
+            id: `navigation.${point}`,
+        });
 
     return (
         <>

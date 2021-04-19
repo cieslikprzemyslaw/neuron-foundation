@@ -8,6 +8,7 @@ const Wrapper = styled.section`
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    background-color: #f5f5f5;
 
     padding: 65px 5vw;
     width: 100%;
