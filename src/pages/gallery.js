@@ -18,7 +18,6 @@ const Gallery = () => {
             <Nav />
             <FoundationMenu />
             <MobileNav />
-            <FoundationMenu/>
             <Wrapper>
                 <Header />
                 <Photos />
