@@ -1,41 +1,40 @@
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import { breakpoints } from '../../common/breakpoints';
+import { respondTo } from '../../common/respondTo';
 
 export const NewsStyles = styled.div`
     margin: 10vh 5vw;
-    @media (max-width: ${breakpoints.md}) {
-        margin: 10vh 5vw;
-    }
 `;
 export const FlexContainer = styled.div`
+    ${respondTo.md`
     & > div:nth-child(even) {
         flex-direction: row-reverse;
         text-align: right;
         a {
-            margin-left: auto;
         }
     }
+    `}
 `;
 
 export const News = styled.div`
+    ${respondTo.md`
     display: flex;
     gap: 24px;
     margin-bottom: 76px;
-    @media (max-width: ${breakpoints.md}) {
-        display: initial;
-    }
+    `}
+    display: initial;
 `;
 
 export const LinksContainer = styled.div`
+    ${respondTo.md`
     margin-top: -30px;
     max-width: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    @media (max-width: ${breakpoints.md}) {
-        margin-top: 0px;
-    }
+    `}
+    margin-top: 0px;
 `;
 
 export const HeaderStyles = styled.div`
@@ -51,13 +50,13 @@ export const HeaderStyles = styled.div`
 `;
 
 export const Image = styled(Img)`
+    ${respondTo.md`
     border-radius: 8px;
     min-width: 272px;
     height: 272px;
-    @media (max-width: ${breakpoints.md}) {
-        margin: 1.6rem 0;
-        height: auto;
-    }
+    `}
+    margin: 1.6rem 0;
+    height: auto;
 `;
 
 export const Header = (Link) => styled(Link)`
@@ -65,8 +64,6 @@ export const Header = (Link) => styled(Link)`
     font-weight: 600;
     font-size: 21px;
     line-height: 29px;
-    display: flex;
-    align-items: center;
     letter-spacing: 0.02em;
     margin-top: 1.6rem;
     margin-bottom: 1.6rem;

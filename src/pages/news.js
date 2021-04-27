@@ -3,19 +3,29 @@ import Nav from '../components/staticComponents/Nav';
 import MobileNav from '../components/staticComponents/MobileNav';
 import Footer from '../components/staticComponents/Footer';
 import styled from 'styled-components';
-import News from '../components/neuronFoundationHome/News';
-
+import Description from '../components/neuronFoundationNews/Description';
+import { NewsStyles, FlexContainer } from '../components/neuronFoundationHome/News/styles';
+import Header from '../components/neuronFoundationHome/News/Header';
+import SingleNews from '../components/neuronFoundationHome/News/SingleNews';
 const Wrapper = styled.div`
     overflow-x: hidden;
     margin: 0;
 `;
 
 const news = ({ data }) => {
+    const { file } = data;
     return (
         <Wrapper>
             <Nav />
             <MobileNav />
-            <News dataImage={data} />
+            <NewsStyles>
+                <Header />
+                <Description />
+                <FlexContainer>
+                    <SingleNews image={file} />
+                    <SingleNews image={file} />
+                </FlexContainer>
+            </NewsStyles>
             <Footer />
         </Wrapper>
     );
