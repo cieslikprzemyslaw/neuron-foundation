@@ -3,7 +3,7 @@ import { Button } from './styles';
 
 const index = ({onClick, text, width, margin}) => {
     return (
-        <Button type="button" style={{width: `${width}px`, margin: `${margin}px`}} onClick={onClick}>
+        <Button type="button" style={{width: `${width}px`, margin: `${margin}`}} onClick={onClick}>
             {text}
         </Button>
     );
