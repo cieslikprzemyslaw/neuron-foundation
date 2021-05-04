@@ -14,13 +14,12 @@ export const FoundationMenu = styled.nav`
     }
 `;
 
-export const Image = styled.img`
+export const Image = styled.img.attrs(props => ({
+    src: props.Img || logoSrc,
+}))`
     margin: 10px 0 10px 50px;
     height: 50px;
     width: 110px;
-    background-image: url(${logoSrc});
-    background-repeat: no-repeat;
-    background-position: center;
 `;
 
 export const Menu = styled.ul`

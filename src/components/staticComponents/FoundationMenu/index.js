@@ -28,10 +28,6 @@ const index = () => {
                         </ListItem>
                     );
                 })}
-                {/* <ListItem><Link href="#"></Link></ListItem>
-                <ListItem><Link href="#"></Link></ListItem>
-                <ListItem><Link href="#"></Link></ListItem>
-                <ListItem><Link href="#"></Link></ListItem> */}
             </Menu>
         </FoundationMenu>
     );
